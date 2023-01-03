@@ -50,8 +50,6 @@ void	set_init_path(t_root *root)
 {
 	root->hero.path = root->path.hero_right;
 	root->hero.control = 'P';
-	root->patrol.path = root->path.patrol1;
-	root->patrol.control = 'M';
 	root->wall.path = root->path.inner_wall;
 	root->wall.control = '1';
 	root->collect.path = root->path.collect[0];
@@ -60,6 +58,8 @@ void	set_init_path(t_root *root)
 	root->exit.control = 'E';
 	root->floor.path = root->path.floor;
 	root->floor.control = '0';
+	root->patrol.path = root->path.patrol1;
+	root->patrol.control = 'M';
 }
 
 void	set_path(t_root *root)

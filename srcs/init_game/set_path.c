@@ -28,9 +28,6 @@ void	set_elements_path(t_root *root)
 	root->path.inner_wall = "./sprites/walls/inner.xpm";
 	root->path.closed_door = "./sprites/elements/door_closed.xpm";
 	root->path.opened_door = "./sprites/elements/door_opened.xpm";
-	root->path.patrol1 = "./sprites/patrol/patrol1.xpm";
-	root->path.patrol2 = "./sprites/patrol/patrol2.xpm";
-	root->path.patrol3 = "./sprites/patrol/patrol3.xpm";
 }
 
 void	set_collect_path(t_root *root)
@@ -50,8 +47,6 @@ void	set_init_path(t_root *root)
 {
 	root->hero.path = root->path.hero_right;
 	root->hero.control = 'P';
-	root->patrol.path = root->path.patrol1;
-	root->patrol.control = 'M';
 	root->wall.path = root->path.inner_wall;
 	root->wall.control = '1';
 	root->collect.path = root->path.collect[0];

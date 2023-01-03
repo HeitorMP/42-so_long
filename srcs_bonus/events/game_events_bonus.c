@@ -24,5 +24,5 @@ void	check_door_open(t_root *root)
 void	game_events(t_root *root)
 {
 	check_door_open(root);
-	check_move_patrol(root, DOWN);
+	check_move_patrol(root);
 }

@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_game.c                                        :+:      :+:    :+:   */
+/*   init_game_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:00:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2022/12/16 11:00:54 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/03 18:08:17 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long_bonus.h"
+#include <stddef.h>
 
 void	check_ber_file(t_root *root)
 {
@@ -43,13 +44,8 @@ void	set_elements(t_root *root, char element, size_t y, size_t x)
 		root->exit.x = x;
 		root->exit.y = y;
 	}
-	else if (element == '0' && root->counters.count_patrol)
-	{
-		root->counters.count_patrol--;
-		root->playfield.playfield[y][x] = 'M';
-		root->patrol.x = x;
-		root->patrol.y = y;
-	}
+	if (root->counters.count_patrol > 0)
+		random_patrol_pos(root);
 }
 
 void	check_elements(t_root *root)

@@ -52,6 +52,7 @@ void	flood_fill(t_root *root)
 {
 	int	x;
 	int	y;
+
 	x = root->hero.x;
 	y = root->hero.y;
 	call_flood_fill(root, y, x);

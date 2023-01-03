@@ -18,6 +18,19 @@
 # include <errno.h>
 # include <stdlib.h>
 
+/* KEY MACROS */
+# define ESC 65307
+# define RIGHT 100
+# define LEFT 97
+# define UP 119
+# define DOWN 115
+# define NONE 0
+
+/* SIZE MACROS */
+
+# define BITS 32
+# define MONSTERS 1;
+
 typedef struct s_sprite {
 	char	control;
 	void	*img;
@@ -118,18 +131,6 @@ typedef struct root {
 	t_path		path;
 	char		*score;
 }				t_root;
-
-/* KEY MACROS */
-# define ESC 65307
-# define RIGHT 100
-# define LEFT 97
-# define UP 119
-# define DOWN 115
-# define NONE 0
-
-/* SIZE MACROS */
-
-# define BITS 32
 
 int		collision(t_sprite *element1, t_sprite *element2);
 void	move_sprite(t_root *root, t_sprite *element, char behind, \

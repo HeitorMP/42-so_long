@@ -23,7 +23,7 @@ BONUS_SRCS	=	so_long_bonus.c game_loop_bonus.c game_render_bonus.c \
 				init_game/init_game_bonus.c init_game/set_counters_bonus.c init_game/set_flags_bonus.c init_game/set_path_bonus.c \
 				playfield/check_playfield_bonus.c playfield/check_way_out_bonus.c playfield/get_playfield_bonus.c \
 				events/game_events_bonus.c events/move_events_bonus.c events/collision_events_bonus.c events/patrol_move_events_bonus.c \
-				engine/put_sprite_bonus.c engine/move_sprite_bonus.c engine/collision_bonus.c \
+				engine/put_sprite_bonus.c engine/move_sprite_bonus.c engine/collision_bonus.c engine/random_pos.c \
 				error/print_error_bonus.c error/exit_error_bonus.c \
 				animation/animation_bonus.c animation/hero_animation_bonus.c animation/collect_animation_bonus.c animation/wall_animation_bonus.c \
 				animation/exit_animation_bonus.c animation/patrol_animation.c\

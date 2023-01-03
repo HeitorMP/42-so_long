@@ -17,7 +17,7 @@ void	set_counters(t_root *root)
 	root->counters.count_collect = 0;
 	root->counters.count_collect_animation = 0;
 	root->counters.count_move = 0;
-	root->counters.count_patrol = 1;
+	root->counters.count_patrol = MONSTERS;
 	root->counters.count_patrol_animation = 0;
 	root->counters.count_wall_animation = 0;
 }
