@@ -89,5 +89,7 @@ void	init_game(t_root *root)
 	get_playfield(root);
 	check_playfield(root);
 	check_elements(root);
+	if (root->flags.has_init_error == 0)
+		flood_fill(root);
 	check_ber_file(root);
 }

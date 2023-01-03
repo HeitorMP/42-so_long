@@ -16,7 +16,8 @@ int	input(int keycode, t_root *root)
 {
 	if (keycode == ESC)
 		exit_game_request(root);
-	else
+	else if (keycode == UP || keycode == DOWN || \
+			keycode == LEFT || keycode == RIGHT)
 	{
 		root->score = ft_itoa(root->counters.count_move);
 		mlx_string_put(root->mlx.mlx, root->mlx.win, 100, \
@@ -38,7 +39,6 @@ int	main(int argc, char const *argv[])
 	}
 	root.map_file.path = (char *)argv[1];
 	init_game(&root);
-	flood_fill(&root);
 	if (root.flags.has_init_error)
 		print_error(&root);
 	root.mlx.mlx = mlx_init();

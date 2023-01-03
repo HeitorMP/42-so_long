@@ -19,7 +19,7 @@ void	check_horizontal_borders(t_root *root)
 
 	lin = root->playfield.lin - 1;
 	i = 0;
-	while (i < root->playfield.col - 1)
+	while (i < root->playfield.col - 2)
 	{
 		if (root->playfield.playfield[0][i] != '1' || \
 			root->playfield.playfield[lin][i] != '1')
