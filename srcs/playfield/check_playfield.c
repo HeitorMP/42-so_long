@@ -24,6 +24,7 @@ void	check_horizontal_borders(t_root *root)
 		if (root->playfield.playfield[0][i] != '1' || \
 			root->playfield.playfield[lin][i] != '1')
 		{
+			root->flags.has_init_error = 1;
 			root->flags.is_not_border = 1;
 			break ;
 		}
