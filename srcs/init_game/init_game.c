@@ -6,11 +6,21 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:00:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2022/12/16 11:00:54 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/04 13:35:51 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
+
+void	check_element(t_root *root, char element)
+{
+	if (element != '0' && element != '1' && element != 'P' && \
+		element != 'C' && element != 'E')
+	{
+		root->flags.is_invalid_element = 1;
+		root->flags.has_init_error = 1;
+	}
+}
 
 void	check_ber_file(t_root *root)
 {
@@ -26,6 +36,7 @@ void	check_ber_file(t_root *root)
 
 void	set_elements(t_root *root, char element, size_t y, size_t x)
 {
+	check_element(root, element);
 	if (element == 'C')
 	{
 		root->flags.is_collect_present = 1;
