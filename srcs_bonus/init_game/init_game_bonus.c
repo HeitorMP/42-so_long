@@ -28,7 +28,8 @@ void	check_ber_file(t_root *root)
 void	check_element(t_root *root, char element)
 {
 	if (element != '0' && element != '1' && element != 'P' && \
-		element != 'C' && element != 'E' && element != 'M')
+		element != 'C' && element != 'E' && element != 'M' && \
+		element != '\n')
 	{
 		root->flags.is_invalid_element = 1;
 		root->flags.has_init_error = 1;
