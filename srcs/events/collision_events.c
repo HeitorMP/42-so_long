@@ -15,7 +15,10 @@
 void	check_collision_exit(t_root *root)
 {
 	if (collision(&root->hero, &root->exit))
+	{
 		root->flags.is_game_over = 1;
+		root->flags.is_game_over_fail = 0;
+	}
 }
 
 void	check_collision_collect(t_root *root)
@@ -29,7 +32,6 @@ void	check_collision_collect(t_root *root)
 		{
 			put_sprite(root, &root->collect[i], root->playfield.lin, root->counters.count_collect);
 			root->counters.count_collect--;
-			ft_printf("count collect: %d\n", root->counters.count_collect);
 		}
 		i--;
 	}

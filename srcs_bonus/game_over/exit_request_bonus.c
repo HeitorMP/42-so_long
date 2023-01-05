@@ -20,6 +20,7 @@ int	exit_game_request(t_root *root)
 	free(root->mlx.mlx);
 	free(root->path.collect);
 	playfield_free(root);
+	free(root->collect);
 	ft_printf("Good bye and thanks for playing!!\n");
 	exit (EXIT_SUCCESS);
 	return (0);

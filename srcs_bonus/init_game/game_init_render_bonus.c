@@ -10,37 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "../../includes/so_long_bonus.h"
 
 void	render_tile(t_root *root, char tile, size_t y, size_t x)
 {
 	if (tile == 'P')
-		put_sprite(root, root->hero, y, x);
+		put_sprite(root, &root->hero, y, x);
 	else if (tile == '1')
 	{
 		root->wall.y = y;
 		root->wall.x = x;
 		wall_animation(root);
-		put_sprite(root, root->wall, y, x);
+		put_sprite(root, &root->wall, y, x);
 	}
 	else if (tile == 'C')
-		put_sprite(root, root->collect, y, x);
-	else if (tile == 'E' || tile == 'O')
-		put_sprite(root, root->exit, y, x);
+	{
+		root->collect[root->quant.quant_collect - 1].path = root->path.collect[0];
+		root->collect[root->quant.quant_collect - 1].control = 'C';
+		put_sprite(root, &root->collect[root->quant.quant_collect - 1], y, x);
+		root->quant.quant_collect--;
+	}
+	else if (tile == 'E')
+		put_sprite(root, &root->exit, y, x);
 	else if (tile == '0')
-		put_sprite(root, root->floor, y, x);
+		put_sprite(root, &root->floor, y, x);
 	else if (tile == 'M')
-		put_sprite(root, root->patrol, y, x);
-}
-
-void	render_text(t_root *root)
-{
-	root->score = ft_itoa(root->counters.count_move);
-	mlx_string_put(root->mlx.mlx, root->mlx.win, 32, \
-		(root->playfield.lin * 32) + 16, 16711680, "Moves: ");
-	mlx_string_put(root->mlx.mlx, root->mlx.win, 100, \
-		(root->playfield.lin * 32) + 16, 16711680, root->score);
-	free(root->score);
+		put_sprite(root, &root->patrol, y, x);
 }
 
 void	render_map(t_root *root)
@@ -50,7 +45,6 @@ void	render_map(t_root *root)
 
 	lines = 0;
 	cols = 0;
-	render_text(root);
 	while (lines < root->playfield.lin)
 	{
 		while (cols < root->playfield.col)
@@ -62,4 +56,5 @@ void	render_map(t_root *root)
 		cols = 0;
 		lines++;
 	}
+	root->quant.quant_collect = root->counters.count_collect;
 }

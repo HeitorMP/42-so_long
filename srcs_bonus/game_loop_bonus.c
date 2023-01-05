@@ -12,6 +12,27 @@
 
 #include "../includes/so_long_bonus.h"
 
+void	render_collect(t_root *root)
+{
+	int i;
+
+	i = root->quant.quant_collect - 1;
+	while(i >= 0)
+	{
+		put_sprite(root, &root->collect[i], root->collect[i].y, root->collect[i].x);
+		i--;
+	}
+}
+
+void	render_sprites(t_root *root)
+{
+	put_sprite(root, &root->hero, root->hero.y, root->hero.x);
+	put_sprite(root, &root->patrol, root->patrol.y, root->patrol.x);
+	render_collect(root);
+	put_sprite(root, &root->exit, root->exit.y, root->exit.x);
+
+}
+
 int	game_loop(t_root *root)
 {
 	animation(root);
@@ -19,7 +40,7 @@ int	game_loop(t_root *root)
 	{
 		check_collision_events(root);
 		game_events(root);
-		render_map(root);
+		render_sprites(root);
 	}
 	else
 		game_over(root);
