@@ -41,8 +41,16 @@ typedef struct s_sprite {
 	size_t	x;
 	size_t	y;
 	int		direction;
+	int		quant;
 	char	*path;
 }				t_sprite;
+
+typedef	struct s_quant
+{
+	int	quant_collect;
+	int	quant_patrol;
+}				t_quant;
+
 
 typedef struct s_playfield {
 	char	**playfield;
@@ -127,15 +135,16 @@ typedef struct root {
 	t_sprite	exit;
 	t_sprite	floor;
 	t_sprite	wall;
-	t_sprite	collect;
+	t_sprite	*collect;
 	t_path		path;
+	t_quant		quant;
 	char		*score;
 }				t_root;
 
 int		collision(t_sprite *element1, t_sprite *element2);
-void	move_sprite(t_root *root, t_sprite *element, char behind, \
+void	move_sprite(t_root *root, t_sprite *element, t_sprite *behind, \
 		int direction);
-void	put_sprite(t_root *root, t_sprite sprite, size_t y, size_t x);
+void	put_sprite(t_root *root, t_sprite *sprite, size_t y, size_t x);
 int		exit_game_request(t_root *root);
 int		playfield_free(t_root *root);
 void	set_counters(t_root *root);

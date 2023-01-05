@@ -49,8 +49,6 @@ void	set_init_path(t_root *root)
 	root->hero.control = 'P';
 	root->wall.path = root->path.inner_wall;
 	root->wall.control = '1';
-	root->collect.path = root->path.collect[0];
-	root->collect.control = 'C';
 	root->exit.path = root->path.closed_door;
 	root->exit.control = 'E';
 	root->floor.path = root->path.floor;

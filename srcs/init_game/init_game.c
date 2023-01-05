@@ -41,6 +41,7 @@ void	set_elements(t_root *root, char element, size_t y, size_t x)
 	{
 		root->flags.is_collect_present = 1;
 		root->counters.count_collect++;
+		root->quant.quant_collect++;
 	}
 	else if (element == 'P')
 	{

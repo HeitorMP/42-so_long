@@ -22,6 +22,12 @@ int	input(int keycode, t_root *root)
 	return (0);
 }
 
+void	setup_game(t_root *root)
+{
+	root->collect = malloc(sizeof(t_sprite) * root->quant.quant_collect);
+	render_map(root);
+}
+
 int	main(int argc, char const *argv[])
 {
 	t_root	root;
@@ -37,7 +43,8 @@ int	main(int argc, char const *argv[])
 		print_error(&root);
 	root.mlx.mlx = mlx_init();
 	root.mlx.win = mlx_new_window(root.mlx.mlx, \
-		(root.playfield.col - 1) * BITS, root.playfield.lin * BITS, "so long");
+		(root.playfield.col - 1) * BITS, (root.playfield.lin + 1)* BITS, "so long");
+	setup_game(&root);
 	mlx_key_hook(root.mlx.win, input, &root);
 	mlx_loop_hook(root.mlx.mlx, game_loop, &root);
 	mlx_hook(root.mlx.win, 17, 0, exit_game_request, &root);

@@ -8,9 +8,10 @@ B_SRCSDIR	=	srcs_bonus
 B_OBJSDIR	=	objs_bonus
 INCLUDES	=	includes
 
-SRCS		=	so_long.c game_loop.c game_render.c \
+SRCS		=	so_long.c game_loop.c \
 				game_over/exit_request.c game_over/free_playfield.c game_over/game_over.c \
 				init_game/init_game.c init_game/set_counters.c init_game/set_flags.c init_game/set_path.c \
+				init_game/game_init_render.c \
 				playfield/check_playfield.c playfield/check_way_out.c playfield/get_playfield.c \
 				events/game_events.c events/move_events.c events/collision_events.c \
 				engine/put_sprite.c engine/move_sprite.c engine/collision.c \

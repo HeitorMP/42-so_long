@@ -12,8 +12,15 @@
 
 #include "../../includes/so_long.h"
 
+void	set_quant(t_root *root)
+{
+	root->quant.quant_collect = 0;
+	root->quant.quant_patrol = 0;
+}
+
 void	set_flags(t_root *root)
 {
+	set_quant(root);
 	root->flags.has_init_error = 0;
 	root->flags.has_ingame_error = 0;
 	root->flags.is_files_not_present = 0;
