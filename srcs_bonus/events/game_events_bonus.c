@@ -24,5 +24,6 @@ void	check_door_open(t_root *root)
 void	game_events(t_root *root)
 {
 	check_door_open(root);
-	check_move_patrol(root);
+	if (root->counters.count_patrol_animation == 899)
+		check_move_patrol(root);
 }

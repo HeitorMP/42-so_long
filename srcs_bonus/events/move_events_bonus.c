@@ -69,7 +69,6 @@ void	check_move_sprite(t_root *root, int direction)
 		if (check_move_exit(root, direction))
 		{
 			root->counters.count_move++;
-			ft_printf("Moves %d\n", root->counters.count_move);
 			move_sprite(root, &root->hero, &root->floor, direction);
 		}
 	}

@@ -14,12 +14,13 @@
 
 void	render_collect(t_root *root)
 {
-	int i;
+	int	i;
 
 	i = root->quant.quant_collect - 1;
-	while(i >= 0)
+	while (i >= 0)
 	{
-		put_sprite(root, &root->collect[i], root->collect[i].y, root->collect[i].x);
+		put_sprite(root, &root->collect[i], root->collect[i].y, \
+		root->collect[i].x);
 		i--;
 	}
 }

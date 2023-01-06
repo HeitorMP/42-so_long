@@ -44,10 +44,8 @@ int	check_patrol_allow(t_root *root, t_sprite element, int direction)
 void	check_move_patrol(t_root *root)
 {
 	int	new_direction;
-	int delay;
-	srand(time(NULL));
 
-	delay = rand() % 200;
+	srand(time(NULL));
 	new_direction = rand() % 200;
 	if (new_direction < 50)
 		new_direction = UP;
@@ -58,8 +56,5 @@ void	check_move_patrol(t_root *root)
 	else if (new_direction < 200)
 		new_direction = RIGHT;
 	if (check_patrol_allow(root, root->patrol, new_direction))
-	{
-		if (delay < 20)
-			move_sprite(root, &root->patrol, &root->floor , new_direction);
-	}
+		move_sprite(root, &root->patrol, &root->floor, new_direction);
 }

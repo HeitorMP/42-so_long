@@ -19,10 +19,10 @@ int	input(int keycode, t_root *root)
 	else if (keycode == UP || keycode == DOWN || \
 			keycode == LEFT || keycode == RIGHT)
 	{
-		/*root->score = ft_itoa(root->counters.count_move);
+		root->score = ft_itoa(root->counters.count_move);
 		mlx_string_put(root->mlx.mlx, root->mlx.win, 100, \
 			(root->playfield.lin * 32) + 16, 0, root->score);
-		free(root->score);*/
+		free(root->score);
 		check_move_sprite(root, keycode);
 	}
 	return (0);
@@ -31,7 +31,6 @@ int	input(int keycode, t_root *root)
 void	setup_game(t_root *root)
 {
 	root->collect = malloc(sizeof(t_sprite) * root->quant.quant_collect);
-	ft_printf("%d\n", root->quant.quant_collect);
 	render_map(root);
 }
 
@@ -46,7 +45,6 @@ int	main(int argc, char const *argv[])
 	}
 	root.map_file.path = (char *)argv[1];
 	init_game(&root);
-	ft_printf("%d\n", root.quant.quant_collect);
 	if (root.flags.has_init_error)
 		print_error(&root);
 	root.mlx.mlx = mlx_init();

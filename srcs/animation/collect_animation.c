@@ -41,7 +41,7 @@ void	collect_all_animation(t_root *root, int i)
 
 void	collect_animation(t_root *root)
 {
-	int i;
+	int	i;
 
 	i = root->quant.quant_collect - 1;
 	collect_counter(root);

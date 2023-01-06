@@ -25,7 +25,8 @@ void	render_tile(t_root *root, char tile, size_t y, size_t x)
 	}
 	else if (tile == 'C')
 	{
-		root->collect[root->quant.quant_collect - 1].path = root->path.collect[0];
+		root->collect[root->quant.quant_collect - 1].path = \
+		root->path.collect[0];
 		root->collect[root->quant.quant_collect - 1].control = 'C';
 		put_sprite(root, &root->collect[root->quant.quant_collect - 1], y, x);
 		root->quant.quant_collect--;
