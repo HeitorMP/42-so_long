@@ -56,8 +56,6 @@ void	set_init_path(t_root *root)
 	root->exit.control = 'E';
 	root->floor.path = root->path.floor;
 	root->floor.control = '0';
-	root->patrol.path = root->path.patrol1;
-	root->patrol.control = 'M';
 }
 
 void	set_path(t_root *root)

@@ -22,10 +22,7 @@ void	put_sprite(t_root *root, t_sprite *sprite, size_t y, size_t x)
 	sprite->img = mlx_xpm_file_to_image(root->mlx.mlx, \
 		sprite->path, &w, &h);
 	if (sprite->img == NULL)
-	{
-		ft_printf("put sprite error");
 		exit_ingame_error_(root);
-	}
 	sprite->addr = mlx_get_data_addr(sprite->img, \
 		&sprite->bits_per_pixel, &sprite->line_length, \
 		&sprite->endian);

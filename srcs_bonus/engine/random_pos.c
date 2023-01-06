@@ -16,16 +16,23 @@ void	random_patrol_pos(t_root *root)
 {
 	size_t	x;
 	size_t	y;
+	int		i;
 
 	srand(time(NULL));
 	y = rand() % root->playfield.lin;
 	x = rand() % root->playfield.col;
+	i = root->counters.count_patrol - 1;
 	if (root->playfield.playfield[y][x] == '0')
 	{
-		root->patrol.y = y;
-		root->patrol.x = x;
+		while (i >= 0)
+		{
+			root->patrol[i].y = y;
+			root->patrol[i].x = x;
+			root->patrol[i].control = 'M';
+			root->playfield.playfield[y][x] = 'M';
+			i--;
+		}
 		root->counters.count_patrol--;
-		root->playfield.playfield[y][x] = 'M';
 	}
 	else
 		random_patrol_pos(root);

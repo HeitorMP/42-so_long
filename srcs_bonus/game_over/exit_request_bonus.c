@@ -21,6 +21,7 @@ int	exit_game_request(t_root *root)
 	free(root->path.collect);
 	playfield_free(root);
 	free(root->collect);
+	free(root->patrol);
 	ft_printf("Good bye and thanks for playing!!\n");
 	exit (EXIT_SUCCESS);
 	return (0);

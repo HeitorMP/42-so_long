@@ -25,6 +25,19 @@ void	render_collect(t_root *root)
 	}
 }
 
+void	render_patrol(t_root *root)
+{
+	int	i;
+
+	i = root->quant.quant_patrol - 1;
+	while (i >= 0)
+	{
+		put_sprite(root, &root->patrol[i], root->patrol[i].y, \
+		root->patrol[i].x);
+		i--;
+	}
+}
+
 void	render_text(t_root *root)
 {
 	root->score = ft_itoa(root->counters.count_move);
@@ -38,7 +51,7 @@ void	render_text(t_root *root)
 void	render_sprites(t_root *root)
 {
 	put_sprite(root, &root->hero, root->hero.y, root->hero.x);
-	put_sprite(root, &root->patrol, root->patrol.y, root->patrol.x);
+	render_patrol(root);
 	render_collect(root);
 	put_sprite(root, &root->exit, root->exit.y, root->exit.x);
 }

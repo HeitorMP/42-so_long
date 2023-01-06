@@ -12,6 +12,23 @@
 
 #include "../../includes/so_long_bonus.h"
 
+void	render_collect_tile(t_root *root, size_t y, size_t x)
+{
+	root->collect[root->quant.quant_collect - 1].path = \
+	root->path.collect[0];
+	root->collect[root->quant.quant_collect - 1].control = 'C';
+	put_sprite(root, &root->collect[root->quant.quant_collect - 1], y, x);
+	root->quant.quant_collect--;
+}
+
+void	render_patrol_tile(t_root *root, size_t y, size_t x)
+{
+	root->patrol[root->quant.quant_patrol - 1].path = root->path.patrol1;
+	root->patrol[root->quant.quant_patrol - 1].control = 'M';
+	put_sprite(root, &root->patrol[root->quant.quant_patrol - 1], y, x);
+	root->quant.quant_patrol--;
+}
+
 void	render_tile(t_root *root, char tile, size_t y, size_t x)
 {
 	if (tile == 'P')
@@ -24,19 +41,13 @@ void	render_tile(t_root *root, char tile, size_t y, size_t x)
 		put_sprite(root, &root->wall, y, x);
 	}
 	else if (tile == 'C')
-	{
-		root->collect[root->quant.quant_collect - 1].path = \
-		root->path.collect[0];
-		root->collect[root->quant.quant_collect - 1].control = 'C';
-		put_sprite(root, &root->collect[root->quant.quant_collect - 1], y, x);
-		root->quant.quant_collect--;
-	}
+		render_collect_tile(root, y, x);
 	else if (tile == 'E')
 		put_sprite(root, &root->exit, y, x);
 	else if (tile == '0')
 		put_sprite(root, &root->floor, y, x);
 	else if (tile == 'M')
-		put_sprite(root, &root->patrol, y, x);
+		render_patrol_tile(root, y, x);
 }
 
 void	render_map(t_root *root)
@@ -58,4 +69,5 @@ void	render_map(t_root *root)
 		lines++;
 	}
 	root->quant.quant_collect = root->counters.count_collect;
+	root->quant.quant_patrol = MONSTERS;
 }

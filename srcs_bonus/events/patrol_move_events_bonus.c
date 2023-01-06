@@ -44,6 +44,7 @@ int	check_patrol_allow(t_root *root, t_sprite element, int direction)
 void	check_move_patrol(t_root *root)
 {
 	int	new_direction;
+	int	i;
 
 	srand(time(NULL));
 	new_direction = rand() % 200;
@@ -55,6 +56,11 @@ void	check_move_patrol(t_root *root)
 		new_direction = LEFT;
 	else if (new_direction < 200)
 		new_direction = RIGHT;
-	if (check_patrol_allow(root, root->patrol, new_direction))
-		move_sprite(root, &root->patrol, &root->floor, new_direction);
+	i = root->quant.quant_patrol - 1;
+	while (i >= 0)
+	{
+		if (check_patrol_allow(root, root->patrol[i], new_direction))
+			move_sprite(root, &root->patrol[i], &root->floor, new_direction);
+		i--;
+	}
 }

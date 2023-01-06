@@ -29,7 +29,7 @@
 /* SIZE MACROS */
 
 # define BITS 32
-# define MONSTERS 1;
+# define MONSTERS 2;
 
 typedef struct s_sprite {
 	char	control;
@@ -131,7 +131,7 @@ typedef struct root {
 	t_flags		flags;
 	t_counter	counters;
 	t_sprite	hero;
-	t_sprite	patrol;
+	t_sprite	*patrol;
 	t_sprite	exit;
 	t_sprite	floor;
 	t_sprite	wall;

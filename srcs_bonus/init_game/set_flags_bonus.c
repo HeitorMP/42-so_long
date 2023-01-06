@@ -16,6 +16,7 @@ void	set_quant(t_root *root)
 {
 	root->quant.quant_collect = 0;
 	root->quant.quant_patrol = MONSTERS;
+	root->patrol = malloc(sizeof(t_sprite) * root->quant.quant_patrol);
 }
 
 void	set_flags(t_root *root)
