@@ -4,7 +4,7 @@
 You must create a basic 2D game in which a dolphin escapes Earth after eating some fish. Instead of a dolphin, fish, and the Earth, you can use any
 character, any collectible and any place you want.
 
-## Screenshot
+## Screenshot:
 ![App Screenshot](https://i.imgur.com/exiohV2.gif)
 
 ## Game:
@@ -40,7 +40,7 @@ program in a clean way.
 
 • The use of the images of the MiniLibX is mandatory.
 
-## Map
+## Map:
 • The map has to be constructed with 3 components: walls, collectibles, and free
 space.
 
@@ -59,7 +59,7 @@ an error.
 
 • You must be able to parse any kind of map, as long as it respects the above rules
 
-## Installation and Running
+## Installation and Running:
 
 Install solong with make
 
@@ -71,7 +71,7 @@ Install solong with make
   ./so_long_bonus /maps/[map_name.ber]
 ```
 
-## Useful links
+## Useful links:
 
  - [minilibx Docs](https://harm-smits.github.io/42docs/libs/minilibx)
 
