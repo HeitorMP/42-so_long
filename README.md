@@ -4,6 +4,9 @@
 You must create a basic 2D game in which a dolphin escapes Earth after eating some fish. Instead of a dolphin, fish, and the Earth, you can use any
 character, any collectible and any place you want.
 
+## Screenshot
+![App Screenshot](https://i.imgur.com/exiohV2.gif)
+
 ## Game:
 
 • The player’s goal is to collect every collectible present on the map, then escape
@@ -56,14 +59,6 @@ an error.
 
 • You must be able to parse any kind of map, as long as it respects the above rules
 
-
-
-
-
-
-
-
-
 ## Installation and Running
 
 Install solong with make
@@ -75,10 +70,6 @@ Install solong with make
   make bonus
   ./so_long_bonus /maps/[map_name.ber]
 ```
-    
-## Screenshot
-![App Screenshot](https://i.imgur.com/exiohV2.gif)
-
 
 ## Useful links
 
