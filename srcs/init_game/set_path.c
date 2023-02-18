@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 22:57:38 by hmaciel-          #+#    #+#             */
-/*   Updated: 2022/12/18 22:57:41 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/02/18 12:07:52 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,33 @@
 
 void	set_elements_path(t_root *root)
 {
-	root->path.floor = "./sprites/floor.xpm";
-	root->path.hero_right = "./sprites/hero/hero_right.xpm";
-	root->path.hero_left = "./sprites/hero/hero_left.xpm";
-	root->path.hero_up = "./sprites/hero/hero_up.xpm";
-	root->path.hero_down = "./sprites/hero/hero_down.xpm";
-	root->path.border_wall_hu = "./sprites/walls/hu.xpm";
-	root->path.border_wall_vl = "./sprites/walls/vl.xpm";
-	root->path.border_wall_bl = "./sprites/walls/bl.xpm";
-	root->path.border_wall_br = "./sprites/walls/br.xpm";
-	root->path.border_wall_ul = "./sprites/walls/ul.xpm";
-	root->path.border_wall_ur = "./sprites/walls/ur.xpm";
-	root->path.inner_wall = "./sprites/walls/inner.xpm";
-	root->path.closed_door = "./sprites/elements/door_closed.xpm";
-	root->path.opened_door = "./sprites/elements/door_opened.xpm";
+	root->path.floor = "./textures/floor.xpm";
+	root->path.hero_right = "./textures/hero/hero_right.xpm";
+	root->path.hero_left = "./textures/hero/hero_left.xpm";
+	root->path.hero_up = "./textures/hero/hero_up.xpm";
+	root->path.hero_down = "./textures/hero/hero_down.xpm";
+	root->path.border_wall_hu = "./textures/walls/hu.xpm";
+	root->path.border_wall_vl = "./textures/walls/vl.xpm";
+	root->path.border_wall_bl = "./textures/walls/bl.xpm";
+	root->path.border_wall_br = "./textures/walls/br.xpm";
+	root->path.border_wall_ul = "./textures/walls/ul.xpm";
+	root->path.border_wall_ur = "./textures/walls/ur.xpm";
+	root->path.inner_wall = "./textures/walls/inner.xpm";
+	root->path.closed_door = "./textures/elements/door_closed.xpm";
+	root->path.opened_door = "./textures/elements/door_opened.xpm";
 }
 
 void	set_collect_path(t_root *root)
 {
 	root->path.collect = malloc(sizeof(char *) * 8);
-	root->path.collect[0] = "./sprites/elements/collect0.xpm";
-	root->path.collect[1] = "./sprites/elements/collect1.xpm";
-	root->path.collect[2] = "./sprites/elements/collect2.xpm";
-	root->path.collect[3] = "./sprites/elements/collect3.xpm";
-	root->path.collect[4] = "./sprites/elements/collect4.xpm";
-	root->path.collect[5] = "./sprites/elements/collect5.xpm";
-	root->path.collect[6] = "./sprites/elements/collect6.xpm";
-	root->path.collect[7] = "./sprites/elements/collect7.xpm";
+	root->path.collect[0] = "./textures/elements/collect0.xpm";
+	root->path.collect[1] = "./textures/elements/collect1.xpm";
+	root->path.collect[2] = "./textures/elements/collect2.xpm";
+	root->path.collect[3] = "./textures/elements/collect3.xpm";
+	root->path.collect[4] = "./textures/elements/collect4.xpm";
+	root->path.collect[5] = "./textures/elements/collect5.xpm";
+	root->path.collect[6] = "./textures/elements/collect6.xpm";
+	root->path.collect[7] = "./textures/elements/collect7.xpm";
 }
 
 void	set_init_path(t_root *root)
