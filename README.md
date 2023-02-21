@@ -12,6 +12,7 @@ character, any collectible and any place you want.
 
 ## Screenshot:
 ![App Screenshot](https://i.imgur.com/exiohV2.gif)
+Image credit : [https://pipoya.itch.io/](https://pipoya.itch.io/)
 
 ## Game:
 
