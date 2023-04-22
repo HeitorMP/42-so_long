@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:00:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/04 13:35:51 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/04/22 08:26:02 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,13 +88,18 @@ void	init_game(t_root *root)
 		ft_printf("Error: No map file found!\n");
 		exit (EXIT_FAILURE);
 	}
+	root->playfield.playfield = NULL;
+	root->playfield.playfield_mask = NULL;
 	set_flags(root);
 	set_counters(root);
 	set_path(root);
 	get_playfield(root);
-	check_playfield(root);
-	check_elements(root);
-	if (root->flags.has_init_error == 0)
-		flood_fill(root);
+	if (root->playfield.lin > 0)
+	{
+		check_playfield(root);
+		check_elements(root);
+		if (root->flags.has_init_error == 0)
+			flood_fill(root);
+	}
 	check_ber_file(root);
 }

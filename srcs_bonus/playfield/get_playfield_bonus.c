@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_playfield.c                                    :+:      :+:    :+:   */
+/*   get_playfield_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:38:15 by hmaciel-          #+#    #+#             */
-/*   Updated: 2022/12/15 20:38:19 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/04/22 08:29:34 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,24 @@ void	get_playfield(t_root *root)
 
 	lines = 0;
 	get_map_size(root);
-	root->playfield.playfield = malloc(sizeof(char *) * root->playfield.lin);
-	root->playfield.playfield_mask = malloc(sizeof(char *) \
-		* root->playfield.lin);
-	root->map_file.fd = open(root->map_file.path, O_RDONLY);
-	while (lines < root->playfield.lin)
+	if (root->playfield.lin > 0)
 	{
-		root->playfield.playfield[lines] = get_next_line(root->map_file.fd);
-		root->playfield.playfield_mask[lines] = \
-			ft_strdup(root->playfield.playfield[lines]);
-		if (!root->playfield.playfield[lines])
-			break ;
-		lines++;
+		root->playfield.playfield = malloc(sizeof(char *) * \
+		root->playfield.lin);
+		root->playfield.playfield_mask = malloc(sizeof(char *) \
+			* root->playfield.lin);
+		root->map_file.fd = open(root->map_file.path, O_RDONLY);
+		while (lines < root->playfield.lin)
+		{
+			root->playfield.playfield[lines] = get_next_line(root->map_file.fd);
+			root->playfield.playfield_mask[lines] = \
+				ft_strdup(root->playfield.playfield[lines]);
+			if (!root->playfield.playfield[lines])
+				break ;
+			lines++;
+		}
 	}
+	else
+		root->flags.has_init_error = 1;
 	close(root->map_file.fd);
 }
